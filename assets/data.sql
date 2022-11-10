@@ -27,3 +27,22 @@ CREATE TABLE IF NOT EXISTS `employee` (
     FOREIGN KEY (`role_id`) REFERENCES role(`id`),
     FOREIGN KEY (`manager_id`) REFERENCES `employee`(`id`)
 );
+
+-- Insert some data into tables
+
+INSERT INTO `department` (`name`) VALUES('Software Engineering');
+INSERT INTO `department` (`name`) VALUES('Sales');
+INSERT INTO `department` (`name`) VALUES('Marketing');
+INSERT INTO `department` (`name`) VALUES('Human Resources');
+INSERT INTO `department` (`name`) VALUES('Accounting');
+
+INSERT INTO `role` (`title`,`salary`,`department_id`) VALUES('Frontend Developer',  100000, 1);
+INSERT INTO `role` (`title`,`salary`,`department_id`) VALUES('FullStack',  110000, 1);
+INSERT INTO `role` (`title`,`salary`,`department_id`) VALUES('Sales Executive',  95000, 2);
+INSERT INTO `role` (`title`,`salary`,`department_id`) VALUES('Accountant',  90000, 5);
+
+INSERT INTO `employee` (`first_name`,`last_name`,`role_id`,`manager_id`) VALUES('Pat','Smith',1,null);
+INSERT INTO `employee` (`first_name`,`last_name`,`role_id`,`manager_id`) VALUES('Susan','Glass',2,null);
+INSERT INTO `employee` (`first_name`,`last_name`,`role_id`,`manager_id`) VALUES('Jon','Lee',1,1);
+INSERT INTO `employee` (`first_name`,`last_name`,`role_id`,`manager_id`) VALUES('Sam','Walker',2,2);
+
